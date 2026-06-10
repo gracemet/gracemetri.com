@@ -1,4 +1,201 @@
-html,body {
-    background-color: #3d3050;
+html,
+body {
+    background-color: #554664;
     color: white;
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:100%;
 }
+
+/* Navigation CSS */
+nav {
+    background-color: rgb(19 18 20);
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #d6cad4;
+    height: 64px;
+    margin: 0;
+    z-index: 1;
+    position:relative;
+}
+
+nav>ul {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    list-style-type: none;
+    padding: 0 32px;
+    margin: 0;
+}
+
+nav>ul>li {
+    margin: 0 16px;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-size: 16px;
+}
+
+nav li:last-child {
+    margin-left: auto;
+}
+
+nav a.current {
+    color: #a46c93;
+}
+
+nav a:link,
+a:visited {
+    color: #9a8da5;
+    text-decoration: none;
+}
+
+
+nav button {
+    background-color: #a46c93;
+    color: #d8cad5;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-family: "Space Mono", monospace;
+}
+
+/* Background CSS */
+.circles-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        repeating-radial-gradient(circle at 59% 50%,
+            transparent -83px,
+            transparent 18px,
+            rgba(255, 255, 255, 0.02) 19px,
+            transparent 20px);
+
+}
+
+.circles-bg1 {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    margin: 19% 51%;
+    width: 295px;
+    height: 295px;
+    border-radius: 50%;
+    background-color: #554664;
+}
+
+/* Content CSS */
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 80px 32px;
+    margin-left: 239px;
+}
+
+#content-title {
+    font-family: "Roboto Slab", serif;
+    color: #d8cad5;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+#content-subtitle {
+    font-family: "Roboto Slab", serif;
+    color: #a46c93;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 300;
+    margin-bottom: 28px;
+}
+
+#content-description {
+    font-family: Inter, sans-serif;
+    color: #9a8da5;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 40px;
+}
+
+#content-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+}
+
+#content-links svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#content-links li a {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #d8cad5;
+    text-decoration: none;
+}
+
+#content-links li:hover {
+    opacity: 0.6;
+}
+
+
+#location {
+    font-family: "Space Mono", monospace;
+    font-size: 13px;
+}
+
+#content-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #9a8da5;
+}
+
+
+/* Scroll Button CSS */
+
+.ScrollButton {
+    color: #9a8DA5;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 1;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    animation: bobbingScrollButton 2s infinite;
+    cursor: pointer;
+    /* Animation causes scroll bar to appear :((( */
+
+}
+
+.ScrollButton a {
+    background-color: transparent;
+    text-decoration: none;
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #9a8da5;
+}
+
+@keyframes bobbingScrollButton {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(10px);}
+    100% {transform: translateY(0);}
+}
+
