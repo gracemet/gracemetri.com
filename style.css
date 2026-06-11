@@ -34,7 +34,7 @@ nav>ul>li {
     margin: 0 16px;
 }
 
-nav li:first-child {
+nav li:first-child, nav li:nth-child(2) {
     margin-right: auto;
     font-size: 16px;
 }
