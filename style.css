@@ -1,201 +1,302 @@
-html,
+:root {
+  /* Color palette — dark, purple-forward */
+  --bg:         #131019;   /* page background */
+  --bg-deep:    #0e0b14;   /* darker pockets */
+  --panel:      #1a1424;   /* card / panel surfaces */
+  --panel-2:    #1c1626;   /* chip surfaces */
+  --ink:        #15101d;   /* code-block background */
+  --line:       rgba(167, 139, 250, 0.16);  /* hairline borders */
+  --line-mid:   rgba(167, 139, 250, 0.3);   /* chip borders */
+  --line-strong:rgba(167, 139, 250, 0.4);   /* pill borders */
+
+  --text:       #f1ecf7;   /* primary text */
+  --text-soft:  #d8cfe4;   /* body paragraphs */
+  --text-dim:   #cfc4dd;   /* hero subtitle */
+  --muted:      #a89cba;   /* secondary labels */
+  --faint:      #7d6f8f;   /* footer / track numbers */
+
+  --lav:        #a78bfa;   /* primary accent (lavender) */
+  --lav-bright: #c4b5fd;   /* hover / highlight accent */
+  --violet:     #7c3aed;   /* saturated accent */
+  --violet-deep:#5b21b6;   /* record label gradient */
+  --on-accent:  #17121f;   /* text on lavender */
+  --yellow:     #f2d44d;   /* price-tag sticker */
+  --on-yellow:  #231c0a;
+
+  /* Type */
+  --font-display: 'Anton', sans-serif;
+  --font-body:    'Archivo', sans-serif;
+  --font-hand:    'Caveat', cursive;
+  --font-mono:    'Space Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #554664;
-    color: white;
     margin: 0;
-    font-family: "Space Mono", monospace;
-    overflow-y: auto;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
     overflow-x: hidden;
-    width:100%;
 }
 
-/* Navigation CSS */
-nav {
-    background-color: rgb(19 18 20);
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: #d6cad4;
-    height: 64px;
-    margin: 0;
-    z-index: 1;
-    position:relative;
+/* When selecting text! */
+::selection {
+    background: var(--violet);
+    color: #fff;
 }
 
-nav>ul {
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navigation CSS*/
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    /* Use flexbox to layout the child elements */
     align-items: center;
+    /* Vertically center the child elements */
+    justify-content: space-between;
+    /* Space out the child elements evenly*/
+    padding: 13px 18px;
+    background: rgba(19, 16, 25, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: rgba(167, 139, 250, 0.16) 1px solid;
+}
+
+
+.nav-brand {
     display: flex;
-    height: 100%;
-    list-style-type: none;
-    padding: 0 32px;
-    margin: 0;
+    align-items: center;
+    gap: 12px;
 }
 
-nav>ul>li {
-    margin: 0 16px;
-}
-
-nav li:first-child, nav li:nth-child(2) {
-    margin-right: auto;
-    font-size: 16px;
-}
-
-nav li:last-child {
-    margin-left: auto;
-}
-
-nav a.current {
-    color: #a46c93;
-}
-
-nav a:link,
-a:visited {
-    color: #9a8da5;
-    text-decoration: none;
-}
-
-
-nav button {
-    background-color: #a46c93;
-    color: #d8cad5;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 13px;
+.nav-name {
+    font-family: var(--font-display);
+    font-size: 15px;
     letter-spacing: 2px;
-    font-family: "Space Mono", monospace;
 }
 
-/* Background CSS */
-.circles-bg {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-
-    background:
-        repeating-radial-gradient(circle at 59% 50%,
-            transparent -83px,
-            transparent 18px,
-            rgba(255, 255, 255, 0.02) 19px,
-            transparent 20px);
-
-}
-
-.circles-bg1 {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    margin: 19% 51%;
-    width: 295px;
-    height: 295px;
-    border-radius: 50%;
-    background-color: #554664;
-}
-
-/* Content CSS */
-
-.content {
-    position: relative;
-    z-index: 1;
-    padding: 80px 32px;
-    margin-left: 239px;
-}
-
-#content-title {
-    font-family: "Roboto Slab", serif;
-    color: #d8cad5;
-    font-size: clamp(42px, 6vw, 72px);
-    line-height: 1.05;
-    font-weight: 700;
-    margin-bottom: 24px;
-}
-
-#content-subtitle {
-    font-family: "Roboto Slab", serif;
-    color: #a46c93;
-    font-size: clamp(16px, 2vw, 22px);
-    font-weight: 300;
-    margin-bottom: 28px;
-}
-
-#content-description {
-    font-family: Inter, sans-serif;
-    color: #9a8da5;
-    font-size: 16px;
-    line-height: 1.7;
-    max-width: 520px;
-    margin-bottom: 40px;
-}
-
-#content-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.nav-links {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 2px;
 }
 
-#content-links svg {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#content-links li a {
-    font-family: "Space Mono", monospace;
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: #d8cad5;
-    text-decoration: none;
-}
-
-#content-links li:hover {
-    opacity: 0.6;
-}
-
-
-#location {
-    font-family: "Space Mono", monospace;
+.nav-link {
+    color: var(--muted);
+    font-weight: 500;
     font-size: 13px;
+    letter-spacing: 0.4px;
+    padding: 8px 8px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-#content-location {
+.nav-link:hover {
+    color: var(--lav-bright);
+}
+
+.nav-contact {
+    background: var(--lav);
+    color: var(--on-accent);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 18px;
+    border-radius: 7px;
+    margin-left: 10px;
+    transition: background 0.15s;
+}
+
+.nav-contact:hover {
+    background: var(--lav-bright);
+}
+
+/* outer circle of logo */
+.nav-logo {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle at 50% 50%, #0c0a11 0px, #241c30 2px, #0c0a11 3px);
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    position: relative;
+}
+
+/* inner circle of logo */
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    margin: -4.5px 0 0 -4.5px;
+    border-radius: 50%;
+    background: var(--lav);
+}
+
+/* HERO CSS */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 130px 64px 150px;;
+}
+
+.hero-glow {
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 920px;
+    height: 920px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent 62%);
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    max-width: 680px;
+}
+
+.badges {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+.pill {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #9a8da5;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--lav-bright);
 }
 
+/* The dot before the "OPEN TO WORK" text */
+.pill::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--lav);
+}
 
-/* Scroll Button CSS */
+.location {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
 
-.ScrollButton {
-    color: #9a8DA5;
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    opacity: 1;
-    transform: none;
+.hero-name {
+    font-family: var(--font-display);
+    /* clamp so it has variable sizing */
+    font-size: clamp(88px, 11vw, 164px);
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 0.92;
+    margin: 0;
+}
+
+.hero-name .accent {
+    color: var(--lav);
+}
+
+.hero-sub {
+    color: var(--text-dim);
+    font-size: 19px;
+    margin-top: 30px;
+    width: 520px;
+    line-height: 1.65;
+}
+
+.hero-links {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    animation: bobbingScrollButton 2s infinite;
-    cursor: pointer;
-    /* Animation causes scroll bar to appear :((( */
-
+    gap: 14px;
+    margin-top: 38px;
 }
 
-.ScrollButton a {
-    background-color: transparent;
-    text-decoration: none;
-    font-family: "Space Mono", monospace;
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: #9a8da5;
+.hero-contact {
+    background: var(--lav);
+    font-size: 15px;
+    color: var(--on-accent);
+    padding: 15px 28px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.15s;
 }
 
-@keyframes bobbingScrollButton {
-    0% {transform: translateY(0);}
-    50% {transform: translateY(10px);}
-    100% {transform: translateY(0);}
+.hero-contact:hover {
+    background: var(--lav-bright);
 }
 
+.hero-link {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.15s, border-color 0.15s;
+    border-radius: 8px;
+    padding: 14px 24px;
+    border: 1px solid var(--line-strong);
+}
+
+.hero-link:hover {
+    color: var(--lav-bright);
+    border-color: var(--lav-bright);
+}
+
+.sticker-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+    margin-top: 56px;
+    font-family: var(--font-mono);
+    flex-wrap: wrap;
+}
+
+.sticker-yellow {
+    transform: rotate(-3deg);
+    background: var(--yellow);
+    color: var(--on-yellow);
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sticker-holo {
+    transform: rotate(2deg);
+    background: linear-gradient(120deg, #f7d9f0, #cdb7f4 40%, #b7e3f4 70%, #f4e9c8);
+    color: var(--on-accent);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+/* Responsive CSS */
+@media (max-width: 980px) {
+    .hero { padding: 120px 32px 140px; }
+}

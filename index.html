@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Grace Metri</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700&amp;family=Caveat:wght@500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"
         rel="stylesheet">
 
     <link href="style.css" rel="stylesheet" type="text/css">
@@ -18,36 +18,202 @@
 </head>
 
 <body>
-    <!-- NAV BAR -->
 
-    <nav>
-        <ul>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="#a46c93"
-                    stroke="#a46c93" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                </svg>
-            </li>
-            <li>GRACE METRI</li>
-            <li><a href="#about" onclick="setCurrent('about')">ABOUT</a></li>
-            <li><a href="#experience" onclick="setCurrent('experience')">EXPERIENCE</a></li>
-            <li><a href="#education" onclick="setCurrent('education')">EDUCATION</a></li>
-            <li><a href="#projects" onclick="setCurrent('projects')">PROJECTS</a></li>
-            <li><a href="#skills" onclick="setCurrent('skills')">SKILLS</a></li>
-            <li><a href="#publications" onclick="setCurrent('publications')">PUBLICATIONS</a></li>
-            <li><button onclick="contact()">CONTACT</button></li>
-        </ul>
-    </nav>
-    <div class="circles-bg"></div>
-    <div class="circles-bg1"></div>
-    <div class="content">
-        <h1 id="content-title">Grace Metri</h1>
-        <p id="content-subtitle">Full-Stack Developer</p>
-        <p id="content-description">Twelve years crafting digital experiences that move people — from independent record
-            labels to global
-            streaming platforms. I believe great design, like great music, has rhythm, tension, and release.</p>
+    <!-- =========== NAV BAR ================= -->
+    <header class="nav">
+        <a class="nav-brand" href="#top">
+            <span class="nav-logo"></span>
+            <span class="nav-name">GRACE METRI</span>
+        </a>
+        <nav class="nav-links">
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#skills">Liner Notes</a>
+            <a class="nav-link" href="#research">Research</a>
+            <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-contact" href="#contact">Say hi</a>
+        </nav>
+    </header>
+
+    <main id="top">
+
+        <!-- =========== HERO ================= -->
+
+        <section class="hero">
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <div class="badges">
+                    <span class="pill">OPEN TO WORK</span>
+                    <span class="location">MURFREESBORO, TN &middot; CLASS OF '24</span>
+                </div>
+
+                <h1 class="hero-name">GRACE<br><span class="accent">METRI</span></h1>
+                <p class="hero-sub">Full-stack developer with a computer science degree, a published IEEE research
+                    paper, and a record collection that keeps outgrowing its shelf.</p>
+                <div class="hero-links">
+                    <a class="hero-contact" href="#contact">Drop me a line</a>
+                    <a class="hero-link" href="https://github.com/gracemet">GitHub &#8599;</a>
+                </div>
+                <div class="sticker-row">
+                    <span class="sticker-yellow">B.S. COMPUTER SCIENCE &middot; MTSU</span>
+                    <span class="sticker-holo">SUMMA CUM LAUDE &#9733; 3.9</span>
+                </div>
+            </div>
+
+        </section>
 
         <ul id="content-links">
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-mail"
+                    data-fg-d3bl30="0.8:4.31334:/src/app/App.tsx:199:15:8591:36:e:Mail::::::D4VR"
+                    data-fgid-d3bl30=":ru:">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <a href="mailto:grace.metri@gmail.com">grace.metri@gmail.com</a>
+            </li>
+            <li>
+                <span data-fg-d3bl37="0.8:4.31334:/src/app/App.tsx:207:13:9083:49:e:span:t" data-fgid-d3bl37=":r12:"
+                    style="color: #d8cad526;">|</span>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-github"
+                    data-fg-d3bl35="0.8:4.31334:/src/app/App.tsx:204:15:8989:38:e:Github::::::t8f"
+                    data-fgid-d3bl35=":r11:">
+                    <path
+                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+                <a href="https://www.linkedin.com/in/gracemetri">gracemetri</a>
+            </li>
+            <li>
+                <span data-fg-d3bl37="0.8:4.31334:/src/app/App.tsx:207:13:9083:49:e:span:t" data-fgid-d3bl37=":r12:"
+                    style="color: #d8cad526;">|</span>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-linkedin"
+                    data-fg-d3bl40="0.8:4.31334:/src/app/App.tsx:209:15:9386:40:e:Linkedin::::::BytQ"
+                    data-fgid-d3bl40=":r14:">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <a href="https://github.com/gracemet">gracemet</a>
+            </li>
+        </ul>
+
+
+        <ul id="content-links">
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-mail"
+                    data-fg-d3bl30="0.8:4.31334:/src/app/App.tsx:199:15:8591:36:e:Mail::::::D4VR"
+                    data-fgid-d3bl30=":ru:">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <a href="mailto:grace.metri@gmail.com">grace.metri@gmail.com</a>
+            </li>
+            <li>
+                <span data-fg-d3bl37="0.8:4.31334:/src/app/App.tsx:207:13:9083:49:e:span:t" data-fgid-d3bl37=":r12:"
+                    style="color: #d8cad526;">|</span>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-github"
+                    data-fg-d3bl35="0.8:4.31334:/src/app/App.tsx:204:15:8989:38:e:Github::::::t8f"
+                    data-fgid-d3bl35=":r11:">
+                    <path
+                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+                <a href="https://www.linkedin.com/in/gracemetri">gracemetri</a>
+            </li>
+            <li>
+                <span data-fg-d3bl37="0.8:4.31334:/src/app/App.tsx:207:13:9083:49:e:span:t" data-fgid-d3bl37=":r12:"
+                    style="color: #d8cad526;">|</span>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-linkedin"
+                    data-fg-d3bl40="0.8:4.31334:/src/app/App.tsx:209:15:9386:40:e:Linkedin::::::BytQ"
+                    data-fgid-d3bl40=":r14:">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <a href="https://github.com/gracemet">gracemet</a>
+            </li>
+        </ul>
+
+
+        <ul id="content-links">
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-mail"
+                    data-fg-d3bl30="0.8:4.31334:/src/app/App.tsx:199:15:8591:36:e:Mail::::::D4VR"
+                    data-fgid-d3bl30=":ru:">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <a href="mailto:grace.metri@gmail.com">grace.metri@gmail.com</a>
+            </li>
+            <li>
+                <span data-fg-d3bl37="0.8:4.31334:/src/app/App.tsx:207:13:9083:49:e:span:t" data-fgid-d3bl37=":r12:"
+                    style="color: #d8cad526;">|</span>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-github"
+                    data-fg-d3bl35="0.8:4.31334:/src/app/App.tsx:204:15:8989:38:e:Github::::::t8f"
+                    data-fgid-d3bl35=":r11:">
+                    <path
+                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+                <a href="https://www.linkedin.com/in/gracemetri">gracemetri</a>
+            </li>
+            <li>
+                <span data-fg-d3bl37="0.8:4.31334:/src/app/App.tsx:207:13:9083:49:e:span:t" data-fgid-d3bl37=":r12:"
+                    style="color: #d8cad526;">|</span>
+            </li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-linkedin"
+                    data-fg-d3bl40="0.8:4.31334:/src/app/App.tsx:209:15:9386:40:e:Linkedin::::::BytQ"
+                    data-fgid-d3bl40=":r14:">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect width="4" height="12" x="2" y="9"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <a href="https://github.com/gracemet">gracemet</a>
+            </li>
+        </ul>
+    </main>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <ul id="content-links">
             <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -108,8 +274,8 @@
             </svg>
             <p id="location">Murfreesboro, TN</p>
         </div>
-    </div>
-
+    </div> -->
+<!-- 
     <div class="ScrollButton">
         <a href="#content-title2">SCROLL</a>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -119,9 +285,9 @@
             data-fgid-d3bl52=":r1d:" style="color: #9a8da5;">
             <path d="m6 9 6 6 6-6"></path>
         </svg>
-    </div>
+    </div> -->
 
-    <!-- <motion.div 
+<!-- <motion.div 
       style="width: 280px; height: 280px;"
       animate="false ? { rotate: 360 } : {}"
       transition="false ? { duration: 4, repeat: Infinity, ease: 'linear' } : {}"
@@ -154,7 +320,7 @@
         <path d="M 50 100 A 100 100 0 0 1 100 50" stroke="rgba(255,255,255,0.04)" strokeWidth="6" fill="none" strokeLinecap="round" />
       </svg>
     </motion.div> -->
-    <div class="content" id="content2">
+<!-- <div class="content" id="content2">
         <h1>Walmart</h1>
         <p>Senior Associate</p>
         <ul>
@@ -174,9 +340,4 @@
             <li>Work published in the 2022 International Conference on Computational Science and Computational Intelligence (CSCI)</li>
             <li>Presented findings for American Council on Science & Edu</li>
         </ul>
-    </div>
-
-
-</body>
-
-</html>
+    </div> -->
