@@ -1,0 +1,89 @@
+/* Navigation CSS*/
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    /* Use flexbox to layout the child elements */
+    align-items: center;
+    /* Vertically center the child elements */
+    justify-content: space-between;
+    /* Space out the child elements evenly*/
+    padding: 13px 32px;
+    background: rgba(19, 16, 25, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: rgba(167, 139, 250, 0.16) 1px solid;
+}
+
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.nav-link {
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--lav-bright);
+}
+
+.nav-contact {
+    background: var(--lav);
+    color: var(--on-accent);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 18px;
+    border-radius: 7px;
+    margin-left: 10px;
+    transition: background 0.15s;
+}
+
+.nav-contact:hover {
+    background: var(--lav-bright);
+}
+
+/* outer circle of logo */
+.nav-logo {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle at 50% 50%, #0c0a11 0px, #241c30 2px, #0c0a11 3px);
+    border: 1px solid rgba(167, 139, 250, 0.35);
+    position: relative;
+}
+
+/* inner circle of logo */
+.nav-logo::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    margin: -4.5px 0 0 -4.5px;
+    border-radius: 50%;
+    background: var(--lav);
+}

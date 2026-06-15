@@ -1,33 +1,56 @@
+@import './hero.css';
+@import './nav.css';
+
+
 :root {
-  /* Color palette — dark, purple-forward */
-  --bg:         #131019;   /* page background */
-  --bg-deep:    #0e0b14;   /* darker pockets */
-  --panel:      #1a1424;   /* card / panel surfaces */
-  --panel-2:    #1c1626;   /* chip surfaces */
-  --ink:        #15101d;   /* code-block background */
-  --line:       rgba(167, 139, 250, 0.16);  /* hairline borders */
-  --line-mid:   rgba(167, 139, 250, 0.3);   /* chip borders */
-  --line-strong:rgba(167, 139, 250, 0.4);   /* pill borders */
+    /* Color palette — dark, purple-forward */
+    --bg: #131019;
+    /* page background */
+    --bg-deep: #0e0b14;
+    /* darker pockets */
+    --panel: #1a1424;
+    /* card / panel surfaces */
+    --panel-2: #1c1626;
+    /* chip surfaces */
+    --ink: #15101d;
+    /* code-block background */
+    --line: rgba(167, 139, 250, 0.16);
+    /* hairline borders */
+    --line-mid: rgba(167, 139, 250, 0.3);
+    /* chip borders */
+    --line-strong: rgba(167, 139, 250, 0.4);
+    /* pill borders */
 
-  --text:       #f1ecf7;   /* primary text */
-  --text-soft:  #d8cfe4;   /* body paragraphs */
-  --text-dim:   #cfc4dd;   /* hero subtitle */
-  --muted:      #a89cba;   /* secondary labels */
-  --faint:      #7d6f8f;   /* footer / track numbers */
+    --text: #f1ecf7;
+    /* primary text */
+    --text-soft: #d8cfe4;
+    /* body paragraphs */
+    --text-dim: #cfc4dd;
+    /* hero subtitle */
+    --muted: #a89cba;
+    /* secondary labels */
+    --faint: #7d6f8f;
+    /* footer / track numbers */
 
-  --lav:        #a78bfa;   /* primary accent (lavender) */
-  --lav-bright: #c4b5fd;   /* hover / highlight accent */
-  --violet:     #7c3aed;   /* saturated accent */
-  --violet-deep:#5b21b6;   /* record label gradient */
-  --on-accent:  #17121f;   /* text on lavender */
-  --yellow:     #f2d44d;   /* price-tag sticker */
-  --on-yellow:  #231c0a;
+    --lav: #a78bfa;
+    /* primary accent (lavender) */
+    --lav-bright: #c4b5fd;
+    /* hover / highlight accent */
+    --violet: #7c3aed;
+    /* saturated accent */
+    --violet-deep: #5b21b6;
+    /* record label gradient */
+    --on-accent: #17121f;
+    /* text on lavender */
+    --yellow: #f2d44d;
+    /* price-tag sticker */
+    --on-yellow: #231c0a;
 
-  /* Type */
-  --font-display: 'Anton', sans-serif;
-  --font-body:    'Archivo', sans-serif;
-  --font-hand:    'Caveat', cursive;
-  --font-mono:    'Space Mono', monospace;
+    /* Type */
+    --font-display: 'Anton', sans-serif;
+    --font-body: 'Archivo', sans-serif;
+    --font-hand: 'Caveat', cursive;
+    --font-mono: 'Space Mono', monospace;
 }
 
 * {
@@ -57,246 +80,119 @@ a {
     text-decoration: none;
 }
 
-/* Navigation CSS*/
-.nav {
-    position: fixed;
-    top: 0;
+/* Keyframes CSS */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes banner-animation {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Banner CSS */
+.banner {
+    position: absolute;
     left: 0;
     right: 0;
-    z-index: 50;
-    display: flex;
-    /* Use flexbox to layout the child elements */
-    align-items: center;
-    /* Vertically center the child elements */
-    justify-content: space-between;
-    /* Space out the child elements evenly*/
-    padding: 13px 18px;
-    background: rgba(19, 16, 25, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: rgba(167, 139, 250, 0.16) 1px solid;
+    bottom: 0;
+    background: var(--lav);
+    color: var(--on-accent);
+    overflow: hidden;
+    padding: 11px 0;
+    z-index: 3;
 }
 
-
-.nav-brand {
+.banner-text {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    width: max-content;
+    animation: banner-animation 36s linear infinite;
 }
 
-.nav-name {
+.banner-text span {
+    font-size: 16px;
     font-family: var(--font-display);
-    font-size: 15px;
     letter-spacing: 2px;
+    white-space: nowrap;
+    padding-right: 8px;
+
 }
 
-.nav-links {
+/* Divider CSS */
+.divider {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 72px 32px 0;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 18px;
 }
 
-.nav-link {
-    color: var(--muted);
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.4px;
-    padding: 8px 8px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: var(--lav-bright);
-}
-
-.nav-contact {
-    background: var(--lav);
-    color: var(--on-accent);
-    font-weight: 700;
-    font-size: 13px;
-    padding: 9px 18px;
-    border-radius: 7px;
-    margin-left: 10px;
-    transition: background 0.15s;
-}
-
-.nav-contact:hover {
-    background: var(--lav-bright);
-}
-
-/* outer circle of logo */
-.nav-logo {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: repeating-radial-gradient(circle at 50% 50%, #0c0a11 0px, #241c30 2px, #0c0a11 3px);
-    border: 1px solid rgba(167, 139, 250, 0.35);
-    position: relative;
-}
-
-/* inner circle of logo */
-.nav-logo::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 9px;
-    height: 9px;
-    margin: -4.5px 0 0 -4.5px;
-    border-radius: 50%;
-    background: var(--lav);
-}
-
-/* HERO CSS */
-.hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 130px 64px 150px;;
-}
-
-.hero-glow {
-    position: absolute;
-    right: -120px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 920px;
-    height: 920px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent 62%);
-}
-
-.hero-content {
-    z-index: 2;
-    position: relative;
-    max-width: 680px;
-}
-
-.badges {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-.pill {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.divider-chip {
+    width: 44px;
+    height: 44px;
     border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 7px 14px;
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 1.5px;
+    border-radius: 8px;
+    display: flex;
     color: var(--lav-bright);
-}
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
 
-/* The dot before the "OPEN TO WORK" text */
-.pill::before {
-  content: '';
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--lav);
-}
-
-.location {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 2px;
-}
-
-.hero-name {
+    padding: 20px;
+    font-size: 20px;
     font-family: var(--font-display);
-    /* clamp so it has variable sizing */
-    font-size: clamp(88px, 11vw, 164px);
-    letter-spacing: 1px;
-    font-weight: 400;
-    line-height: 0.92;
-    margin: 0;
 }
 
-.hero-name .accent {
-    color: var(--lav);
-}
-
-.hero-sub {
-    color: var(--text-dim);
-    font-size: 19px;
-    margin-top: 30px;
-    width: 520px;
-    line-height: 1.65;
-}
-
-.hero-links {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-top: 38px;
-}
-
-.hero-contact {
-    background: var(--lav);
-    font-size: 15px;
-    color: var(--on-accent);
-    padding: 15px 28px;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: background 0.15s;
-}
-
-.hero-contact:hover {
-    background: var(--lav-bright);
-}
-
-.hero-link {
-    color: var(--text);
-    font-size: 15px;
-    font-weight: 600;
-    transition: color 0.15s, border-color 0.15s;
-    border-radius: 8px;
-    padding: 14px 24px;
-    border: 1px solid var(--line-strong);
-}
-
-.hero-link:hover {
-    color: var(--lav-bright);
-    border-color: var(--lav-bright);
-}
-
-.sticker-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 12px;
-    margin-top: 56px;
+.divider-label {
     font-family: var(--font-mono);
-    flex-wrap: wrap;
+    color: var(--muted);
+    letter-spacing: 3px;
+    font-size: 12px;
+    white-space: nowrap;
 }
 
-.sticker-yellow {
-    transform: rotate(-3deg);
-    background: var(--yellow);
-    color: var(--on-yellow);
-    padding: 10px 16px;
-    border-radius: 4px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+.divider-line {
+    flex: 1;
+    border-bottom: 1px solid var(--line);
 }
 
-.sticker-holo {
-    transform: rotate(2deg);
-    background: linear-gradient(120deg, #f7d9f0, #cdb7f4 40%, #b7e3f4 70%, #f4e9c8);
-    color: var(--on-accent);
-    padding: 10px 18px;
-    border-radius: 999px;
-    font-weight: 700;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive CSS */
 @media (max-width: 980px) {
-    .hero { padding: 120px 32px 140px; }
+    .hero {
+        padding: 120px 32px 140px;
+    }
+
+    .vinyl-wrap {
+        opacity: 0.35;
+    }
+
+    .nav {
+        padding: 13px 18px;
+    }
+
+    .nav-link {
+        padding: 8px 8px;
+    }
 }
