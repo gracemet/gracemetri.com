@@ -1,0 +1,103 @@
+/* Skills CSS */
+.section.skills p {
+    color: var(--muted);
+    font-size: 16px;
+    margin: -36px 0 44px;
+}
+
+.tracklist {
+    border-radius: 16px;
+    border: solid 1px rgba(167, 139, 250, 0.18);
+    padding: 52px 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    background: var(--panel);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    gap: 24px 64px;
+}
+
+.side-title {
+    font-family: var(--font-display);
+    display: block;
+    align-self: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--line-mid);
+}
+
+.side-sub {
+    margin-left: 7px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+.side-a,
+.side-b {
+    counter-reset: item;
+    display: inline;
+}
+
+.side-a li:hover,
+.side-b li:hover {
+    background-color: rgba(124, 58, 237, 0.16);
+}
+
+.side-a li,
+.side-b li {
+    display: flex;
+    text-wrap: nowrap;
+    align-items: baseline;
+    gap: 12px;
+    padding: 9px 10px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 15px;
+}
+
+.side-a li::before,
+.side-b li::before {
+    display: inline-block;
+    content: "A" counter(item);
+    counter-increment: item;
+    width: 28px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--faint);
+}
+
+.side-b li::before {
+    content: "B" counter(item);
+}
+
+
+.tracklist-line {
+    display: inline-block;
+    width: 80%;
+    border-bottom: 1px dotted var(--line-mid);
+}
+
+.side-a-wrapper {
+    padding: 0;
+}
+
+.track-length {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.tracklist-footer {
+    border-top: 1px solid var(--line-mid);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--faint);
+    align-self: center;
+    letter-spacing: 1.5px;
+    grid-column: 1 / -1;
+    text-align: center;    
+    margin-top: 14px;
+    padding-top: 18px;
+}
