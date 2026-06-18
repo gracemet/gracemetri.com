@@ -75,7 +75,8 @@
 
 .tracklist-line {
     display: inline-block;
-    width: 80%;
+    width: 90%;
+    transform: translateY(-4px);
     border-bottom: 1px dotted var(--line-mid);
 }
 
@@ -97,7 +98,7 @@
     align-self: center;
     letter-spacing: 1.5px;
     grid-column: 1 / -1;
-    text-align: center;    
+    text-align: center;
     margin-top: 14px;
     padding-top: 18px;
 }
