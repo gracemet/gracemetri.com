@@ -1,0 +1,66 @@
+/* Experience CSS */
+.line {
+    border-bottom: 1px solid var(--line);
+    flex: 1;
+}
+
+.job {
+    display: flex;
+    align-items: start;
+    padding: 38px 0;
+    gap: 8px 48px;
+}
+
+.tenure {
+    padding-top: 5px;
+    width: 200px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-size: 12px;
+    font-family: var(--font-mono);
+}
+
+.job div {
+    display: flex;
+    flex-direction: column;
+}
+
+.job div span:nth-child(1) {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.job div span:nth-child(2) {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.job ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0  0;
+    padding-left: 20px;
+}
+
+.job li {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+.chips.education {
+    flex-direction: row;
+}
+
+.chip.empty {
+    border-radius: 999px;
+    color: var(--lav-bright);
+    border: 1px solid var(--line-mid);
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 7px 15px;
+    width: fit-content;
+}
