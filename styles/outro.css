@@ -65,4 +65,5 @@
 
 .chip.empty:hover {
     border: 1px solid var(--lav-bright);
+    cursor: pointer;
 }
