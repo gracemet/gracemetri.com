@@ -52,6 +52,7 @@
 
 .nav-contact {
     background: var(--lav);
+    border: none;
     color: var(--on-accent);
     font-weight: 700;
     font-size: 13px;
@@ -59,6 +60,7 @@
     border-radius: 7px;
     margin-left: 10px;
     transition: background 0.15s;
+    font-family: var(--font-body);
 }
 
 .nav-contact:hover {

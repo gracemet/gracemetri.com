@@ -3,7 +3,7 @@
 @import './about.css';
 @import './skills.css';
 @import './research.css';
-@import './education.css';
+@import './experience.css';
 @import './outro.css';
 
 
@@ -206,6 +206,28 @@ section[id] {
     margin: 0 0 52px;
 }
 
+/* Footer CSS */
+.footer{
+    border-top: 1px solid var(--line);
+    font-size: 11.5px;
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+    gap: 16px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--faint);
+    padding: 26px 32px;
+}
+
+
+/* Contact Modal CSS */
+.contactModal {
+    z-index: 4;
+    display: none;
+
+}
 
 /* Responsive CSS */
 @media (max-width: 980px) {

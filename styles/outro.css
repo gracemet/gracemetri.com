@@ -55,7 +55,7 @@
 }
 
 
-.chip.empty {
+.section.outro .chip.empty {
     font-size: 13px;
     font-family: var(--font-mono);
     color: var(--text);
@@ -63,7 +63,8 @@
     padding: 11px 20px;
 }
 
-.chip.empty:hover {
+.section.outro .chip.empty:nth-child(-n + 3):hover {
     border: 1px solid var(--lav-bright);
     cursor: pointer;
 }
+

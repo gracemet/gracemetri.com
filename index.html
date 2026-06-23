@@ -11,7 +11,8 @@
         rel="stylesheet">
 
     <!-- <link href="styles\style.css" rel="stylesheet" type="text/css"> -->
-    <link href="https://gracemetri.com/styles/style.css" rel="stylesheet" type="text/css">
+    <!-- <link href="https://gracemetri.com/styles/style.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://gracemetri.com/styles/main.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/x-icon" href="https://gracemetri.com/Images/favicon.ico">
     <!-- <link rel="icon" type="image/x-icon" href="https://gracemetri.com/Images/favicon.ico"> -->
     <!-- <script type="text/javascript" src="index.js"></script> -->
@@ -30,7 +31,7 @@
             <a class="nav-link" href="#skills">Liner Notes</a>
             <a class="nav-link" href="#research">Research</a>
             <a class="nav-link" href="#experience">Experience</a>
-            <a class="nav-contact" href="#contact">Say hi</a>
+            <button class="nav-contact" href="#contact">Say hi</button>
         </nav>
     </header>
 
@@ -293,17 +294,33 @@
         </div>
 
         <!-- =========== OUTRO =========== -->
-        
         <div class="section outro">
             <span>thanks for listening &mdash;</span>
             <h1>LET'S TALK</h1>
-            <p>I'm looking for my first full-time developer role — full-stack, front-end, or back-end. If your team needs someone detail-obsessed who learns fast, I'd love to hear from you.</p>
+            <p>I'm looking for my first full-time developer role — full-stack, front-end, or back-end. If your team
+                needs someone detail-obsessed who learns fast, I'd love to hear from you.</p>
             <a class="outro email" href="mailto:grace.metri@gmail.com">grace.metri@gmail.com</a>
             <div class="chips contact">
                 <a class="chip empty" href="https://github.com/gracemet">GitHub &#8599;</a>
                 <a class="chip empty" href="https://www.linkedin.com/in/gracemetri/">LinkedIn &#8599;</a>
-                <button class="chip empty">662-360-9078</button>
+                <div class="chipBorder">
+                    <button id="phone" onclick="copyToClipboard('662-360-9078')"
+                        class="chip empty phoneButton">662-360-9078</button>
+                </div>
                 <button class="chip empty">Murfreesboro, TN</button>
+            </div>
+        </div>
+
+        <!-- =========== FOOTER =========== -->
+        <div class="footer">
+            <span>&copy; 2026 GRACE METRI &middot; PRESSED IN MURFREESBORO, TN </span>
+            <span>HAND-BUILT, NO TEMPLATES &middot; VIEW SOURCE ENCOURAGED</span>
+        </div>
+
+        <!-- =========== CONTACT =========== -->
+        <div class="contactModal">
+            <div>
+
             </div>
         </div>
 
