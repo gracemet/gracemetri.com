@@ -64,6 +64,7 @@
 
 html {
     scroll-behavior: smooth;
+    width: fit-content;
 }
 
 body {
@@ -207,7 +208,7 @@ section[id] {
 }
 
 /* Footer CSS */
-.footer{
+.footer {
     border-top: 1px solid var(--line);
     font-size: 11.5px;
     font-family: var(--font-mono);
@@ -223,11 +224,132 @@ section[id] {
 
 
 /* Contact Modal CSS */
-.contactModal {
+.contact {
     z-index: 4;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(19, 16, 25, 0.75);
+    /* display: flex; */
     display: none;
-
+    align-items: center;
+    justify-content: center;
 }
+
+.contactModal {
+    background-color: var(--panel-2);
+    border-radius: 30px;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    display: grid;
+    align-items: center;
+    padding: 75px;
+    border: solid 1px rgba(167, 139, 250, 0.18);
+    box-shadow: 20px 20px 50px 4px rgba(0, 0, 0, 0.05);
+    color: var(--text);
+    font-family: var(--font-body);
+    vertical-align: middle;
+    align-content: center;
+    grid-template-rows: 15% auto;
+}
+
+.closeButton {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 30px;
+    color: var(--faint);
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+
+.inputContainer {
+    font-size: 13px;
+    
+    /*align-items: center;
+    position: relative; */
+}
+
+.inputContainer input, .inputContainer textarea {
+    border-radius: 8px;
+    color: var(--text);
+    background: #16121f;
+    border: 2px solid var(--lav);
+    font-family: var(--font-body);
+    position: relative;
+    width: 100%;
+}
+
+.inputContainer input {
+    height: 30px;
+    padding: 20px 10px;
+    /* width: 400px; */
+}
+
+
+.contactModal form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.inputContainer label {
+    padding: 10px 0;
+    display: block;
+}
+
+.message {
+    margin: 10px 0;
+    height: 110px;
+    resize: none;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#messageContainer {
+    grid-column: 1 / span 2;
+}
+
+.contactHeader {
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 36px;
+}
+
+.sendButton {
+    grid-column: 1 / span 2;
+    align-self: center;
+    background-color: var(--lav);
+    color: var(--on-accent);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive CSS */
 @media (max-width: 980px) {
@@ -266,4 +388,21 @@ section[id] {
         padding-top: 5px;
     }
 
+}
+
+@media (max-width: 500px) {
+    .body {
+        width: min-content;
+    }
+    .hero {
+        padding: 150px 28px 150px;
+    }
+    
+    .hero-content {
+        max-width: 427px;
+    }
+
+    .vinyl-wrap {
+        opacity: 0.25;
+    }
 }

@@ -47,7 +47,8 @@
     color: var(--lav-bright);
 }
 
-.chips.contact {
+.chips-row {
+    gap:12px;
     display: flex;
     justify-content: center;
     align-items: center;

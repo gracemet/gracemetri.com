@@ -3,18 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
     <title>Grace Metri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700&amp;family=Caveat:wght@500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"
         rel="stylesheet">
 
-    <!-- <link href="styles\style.css" rel="stylesheet" type="text/css"> -->
+    <link href="styles\style.css" rel="stylesheet" type="text/css">
     <!-- <link href="https://gracemetri.com/styles/style.css" rel="stylesheet" type="text/css"> -->
     <link href="https://gracemetri.com/styles/main.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/x-icon" href="https://gracemetri.com/Images/favicon.ico">
     <!-- <link rel="icon" type="image/x-icon" href="https://gracemetri.com/Images/favicon.ico"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- <script type="text/javascript" src="index.js"></script> -->
     <script src="https://gracemetri.com/index.js"></script>
 </head>
@@ -31,7 +32,7 @@
             <a class="nav-link" href="#skills">Liner Notes</a>
             <a class="nav-link" href="#research">Research</a>
             <a class="nav-link" href="#experience">Experience</a>
-            <button class="nav-contact" href="#contact">Say hi</button>
+            <button class="nav-contact" onclick="contact('open')">Say hi</button>
         </nav>
     </header>
 
@@ -72,23 +73,23 @@
                     <span class="sticker-holo">SUMMA CUM LAUDE &#9733; 3.9</span>
                 </div>
             </div>
-
+            <div class="banner">
+                <div class="banner-text">
+                    <span>FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022; C++
+                        &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST PRESSING
+                        &#10022; FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022;
+                        C++ &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST
+                        PRESSING &#10022;&nbsp;</span>
+                    <span>FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022; C++
+                        &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST PRESSING
+                        &#10022; FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022;
+                        C++ &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST
+                        PRESSING &#10022;&nbsp;</span>
+                </div>
+            </div>
 
         </section>
-        <div class="banner">
-            <div class="banner-text">
-                <span>FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022; C++
-                    &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST PRESSING
-                    &#10022; FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022;
-                    C++ &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST
-                    PRESSING &#10022;&nbsp;</span>
-                <span>FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022; C++
-                    &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST PRESSING
-                    &#10022; FULL-STACK DEVELOPER &#10022; REACT &#10022; PYTHON &#10022; PHP &#10022; SQL &#10022;
-                    C++ &#10022; PUBLISHED IEEE RESEARCHER &#10022; SUMMA CUM LAUDE &#10022; NOW SEEKING FIRST
-                    PRESSING &#10022;&nbsp;</span>
-            </div>
-        </div>
+
         <!-- =========== SIDE A DIVIDER =========== -->
         <div class="divider">
             <div class="divider-chip">A</div>
@@ -300,7 +301,7 @@
             <p>I'm looking for my first full-time developer role — full-stack, front-end, or back-end. If your team
                 needs someone detail-obsessed who learns fast, I'd love to hear from you.</p>
             <a class="outro email" href="mailto:grace.metri@gmail.com">grace.metri@gmail.com</a>
-            <div class="chips contact">
+            <div class="chips-row">
                 <a class="chip empty" href="https://github.com/gracemet">GitHub &#8599;</a>
                 <a class="chip empty" href="https://www.linkedin.com/in/gracemetri/">LinkedIn &#8599;</a>
                 <div class="chipBorder">
@@ -318,9 +319,33 @@
         </div>
 
         <!-- =========== CONTACT =========== -->
-        <div class="contactModal">
-            <div>
+        <div class="contact" id="contact">
+            <div class="contactModal">
+                <button onclick="contact('close')" class="closeButton">&#x2715;</button>
+                <h1 class="contactHeader">Cue the conversation!</h1>
+                <!-- <p class="contactSub"></p> -->
+                <form id="contact-form">
+                    <div class="inputContainer">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" autocomplete="off" placeholder="Name" required>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="phoneNumber">Phone</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone" maxlength="14"
+                            required>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="contactEmail" placeholder="Email" required>
+                    </div>
+                    <div class="inputContainer" id="messageContainer">
+                        <!-- <label for="message">Message</label> -->
+                        <textarea class="message" type="text" id="message" name="message"
+                            placeholder="Type your message..."></textarea>
+                    </div>
 
+                    <button type="submit" class="sendButton" onclick="sendEmail()">&#9654; Play</button>
+                </form>
             </div>
         </div>
 

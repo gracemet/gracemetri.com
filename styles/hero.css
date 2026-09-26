@@ -82,7 +82,7 @@
     color: var(--text-dim);
     font-size: 19px;
     margin-top: 30px;
-    width: 520px;
+    /* width: 520px; */
     line-height: 1.65;
 }
 
